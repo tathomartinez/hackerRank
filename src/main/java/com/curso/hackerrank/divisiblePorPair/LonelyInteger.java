@@ -10,22 +10,17 @@ public class LonelyInteger {
         int control = 0;
         int controlPercistencia = IntStream.range(0, inputList.size()).boxed()
                 .filter(item -> inputList.get(item).equals(inputList.get(0))).collect(Collectors.toList()).size();
-        Integer ocurrenciaMinima = 0;
+        Integer ocurrenciaMinima = inputList.get(0);
 
         for (Integer validado : inputList) {
 
             control = IntStream.range(0, inputList.size()).boxed().filter(item -> inputList.get(item).equals(validado))
                     .collect(Collectors.toList()).size();
 
-            System.out.println(validado + " " + control);
-
             if (controlPercistencia > control) {
-                System.out.println(validado);
                 controlPercistencia = control;
                 ocurrenciaMinima = validado;
             }
-
-            // if
         }
         return ocurrenciaMinima;
     }
