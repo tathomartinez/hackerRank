@@ -15,6 +15,7 @@ public class ExampleTDD {
 
         return palabra.trim().isEmpty() ? String.valueOf(valor) : palabra;
     }
+    
     public List<String> calcularEnSerie(int valor) {
         List<String> retorno = new ArrayList<>();
 
@@ -57,5 +58,7 @@ public class ExampleTDD {
         }
         return numeroRomano;
     }
+
+
 
 }
