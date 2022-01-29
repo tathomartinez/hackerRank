@@ -109,9 +109,10 @@ public class GradingStudentsTest {
     }
 
     @Test
-    public void gradingStudentsRedondearForty() {
+    public void gradingStudentsGrade4() {
         List<Integer> gradesInput = new ArrayList<Integer>();
         List<Integer> gradesOutputExpect = new ArrayList<Integer>();
+        gradesInput.add(4);
         List<Integer> gradesOutput = GradingStudents.gradingStudents(gradesInput);
         assertThat(gradesOutput, CoreMatchers.is(gradesOutputExpect));
     }

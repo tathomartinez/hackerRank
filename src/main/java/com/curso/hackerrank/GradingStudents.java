@@ -7,6 +7,10 @@ import java.util.List;
 
 public class GradingStudents {
 
+    private GradingStudents() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static List<Integer> gradingStudents(List<Integer> grades) {
         Integer multipleNext = 0;
         List<Integer> gradesOutput = new ArrayList<>();
@@ -15,9 +19,10 @@ public class GradingStudents {
             multipleNext = 0;
             multipleNext += nextMultipleFive(grade);
             if (lessThatForty(multipleNext)) {
-                    gradesOutput.add(lessThat(grade, multipleNext) ? multipleNext : grade);
+                gradesOutput.add(lessThat(grade, multipleNext) ? multipleNext : grade);
             } else {
-                gradesOutput.add(grade);
+                if (!multipleNext.equals(5))
+                    gradesOutput.add(grade);
             }
         }
         return gradesOutput;
@@ -34,7 +39,6 @@ public class GradingStudents {
     public static Integer nextMultipleFive(Integer base) {
         int round = round(base / 5);
         int baseout = round + 1;
-
         return baseout * 5;
     }
 
