@@ -20,7 +20,6 @@ public class GradingStudentsTest {
     }
 
     @Test
-    // @Ignore("mantenimiento de otra vaina")
     public void gradingStudentsCaso_uno() {
         List<Integer> gradesInput = new ArrayList<Integer>();
         List<Integer> gradesOutputExpect = new ArrayList<Integer>();
@@ -114,8 +113,6 @@ public class GradingStudentsTest {
     public void gradingStudentsRedondearForty() {
         List<Integer> gradesInput = new ArrayList<Integer>();
         List<Integer> gradesOutputExpect = new ArrayList<Integer>();
-        gradesInput.add(4);
-        // gradesOutputExpect.add(57);
         List<Integer> gradesOutput = GradingStudents.gradingStudents(gradesInput);
         assertThat(gradesOutput, CoreMatchers.is(gradesOutputExpect));
     }
